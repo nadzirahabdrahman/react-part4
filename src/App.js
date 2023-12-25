@@ -10,10 +10,14 @@ function App() {
 
   // Using React 
   const [counter, setCounter] = useState(0); //initialize 0 value for counter, cannot use inside for loop or if else statement
-  
+
   const incrementValue = () => {
     setCounter(counter + 1); // setCounter for counter will be increment of 1 
     
+  }
+
+  const decrementValue = () => {
+    setCounter(counter - 1); // setCounter for counter will be decrement by 1 
   }
   return (
     <>
@@ -29,6 +33,7 @@ function App() {
 
       {/* Using React */}
       <div className='card flex-apart'>
+        <button onClick={decrementValue}>-</button>
         <span id='number'>$ {counter}</span>
         <button onClick={incrementValue}>+</button>
       </div>
