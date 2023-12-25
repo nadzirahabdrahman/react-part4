@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  // Using Javascript
+  // const incrementValue = () => {
+  //   // console.log(document.getElementById('number').innerText);
+  //   document.getElementById('number').innerText = Number.parseInt(document.getElementById('number').innerText)+1;
+  // }
+
+  // Using React 
+  const [counter, setCounter] = useState(0); //initialize 0 value for counter, cannot use inside for loop or if else statement
+  
+  const incrementValue = () => {
+    setCounter(counter + 1); // setCounter for counter will be increment of 1 
+    
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <h1>Studywith me React pt.4</h1>
+      </div>
+
+      {/* Using Javascript */}
+      {/* <div className='card flex-apart'>
+        <span id='number'>0</span>
+        <button onClick={incrementValue}>+</button>
+      </div> */}
+
+      {/* Using React */}
+      <div className='card flex-apart'>
+        <span id='number'>$ {counter}</span>
+        <button onClick={incrementValue}>+</button>
+      </div>
+    </>
+    
   );
 }
 
